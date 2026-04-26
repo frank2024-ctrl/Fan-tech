@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - TechNova Solutions</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #065aad;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d4ff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(10,25,47,0.8), rgba(10,25,47,0.8)),
+    url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 120px 8%;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 8%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 40px;
+    color: #0a192f;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00d4ff;
+    color: #0a192f;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0a192f;
+    color: white;
+}
+
+/* Team Section */
+.team {
+    padding: 80px 8%;
+    background: white;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 40px;
+    margin-bottom: 50px;
+    color: #0a192f;
+}
+
+.team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.team-card {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+}
+
+.team-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.team-card h3 {
+    margin-bottom: 10px;
+    color: #0a192f;
+}
+
+/* Stats Section */
+.stats {
+    padding: 80px 8%;
+    background: #0a192f;
+    color: white;
+    text-align: center;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat h3 {
+    font-size: 45px;
+    color: #00d4ff;
+}
+
+.stat p {
+    font-size: 18px;
+}
+
+/* Footer */
+footer {
+    background: #08111f;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">TechNova</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <h1>About Our Company</h1>
+    <p>
+        We are a modern technology company focused on innovation, digital solutions,
+        web development, branding, and helping businesses grow in the digital world.
+    </p>
+</section>
+
+<!-- About Section -->
+<section class="about">
+    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72" alt="Office">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            At TechNova Solutions, we believe technology should empower businesses.
+            With years of experience in web development, UI/UX design, software
+            solutions, and digital transformation, we help brands stand out online.
+        </p>
+
+        <p>
+            Our mission is simple: to deliver innovative digital products that
+            create real business growth and long-term success for our clients.
+        </p>
+
+        <a href="#" class="btn">Learn More</a>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="team">
+    <h2>Meet Our Team</h2>
+
+    <div class="team-container">
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="">
+            <h3>John Smith</h3>
+            <p>CEO & Founder</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="">
+            <h3>Sarah Johnson</h3>
+            <p>Lead Designer</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="">
+            <h3>Michael Lee</h3>
+            <p>Senior Developer</p>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="stats">
+    <div class="stats-container">
+        <div class="stat">
+            <h3 class="counter" data-target="250">0</h3>
+            <p>Projects Completed</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="120">0</h3>
+            <p>Happy Clients</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="15">0</h3>
+            <p>Years Experience</p>
+        </div>
+
+        <div class="stat">
+            <h3 class="counter" data-target="24">0</h3>
+            <p>Support Available</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 TechNova Solutions | All Rights Reserved</p>
+</footer>
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+    counter.innerText = '0';
+
+    const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+
+        const increment = target / 100;
+
+        if(current < target) {
+            counter.innerText = `${Math.ceil(current + increment)}`;
+            setTimeout(updateCounter, 20);
+        } else {
+            counter.innerText = target;
+        }
+    };
+
+    updateCounter();
+});
+</script>
+
+</body>
+</html>

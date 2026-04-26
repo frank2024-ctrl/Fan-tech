@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Construction Company</title>
+
+<style>
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: #065aad;
+    color: white;
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.cta-btn {
+    background: #D4AF37;
+    padding: 10px 18px;
+    border: none;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+    background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 60px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-buttons button {
+    margin-right: 10px;
+}
+
+/* ===== TRUST SECTION ===== */
+.trust {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.trust div {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about {
+    padding: 60px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.about img {
+    width: 50%;
+    border-radius: 10px;
+}
+
+.about-text {
+    width: 50%;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services {
+    padding: 60px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 40px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+}
+</style>
+<style>
+/* ===== PROJECTS ===== */
+.projects {
+    padding: 60px;
+    text-align: center;
+    background: #fff;
+}
+
+.projects h2 {
+    margin-bottom: 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    padding: 15px;
+}
+
+/* ===== WHY CHOOSE US ===== */
+.why-us {
+    padding: 60px;
+    background: #0A2540;
+    color: white;
+    text-align: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.why-item {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+    padding: 60px;
+    text-align: center;
+    background: #f5f5f5;
+}
+
+.testimonial-box {
+    max-width: 600px;
+    margin: 20px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ===== FAQ ===== */
+.faq {
+    padding: 60px;
+    background: #fff;
+}
+
+.faq h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    background: #0A2540;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background: #fff;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+    padding: 60px;
+    text-align: center;
+    background: #D4AF37;
+    color: #000;
+}
+
+.cta-section h2 {
+    margin-bottom: 10px;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    padding: 60px;
+    display: flex;
+    gap: 40px;
+    background: #f9f9f9;
+}
+
+.contact-form, .contact-info {
+    flex: 1;
+}
+
+.contact input, 
+.contact textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    background: #0A2540;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+</style>
+
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="logo">Vasku Construction</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <button class="cta-btn">Get Quote</button>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>We Build Your Vision Into Reality</h1>
+        <p>Trusted construction solutions with over 15 years of excellence in building, renovation, and design.</p>
+        
+        <div class="hero-buttons">
+            <a href="contact.html"><button class="cta-btn">Get Started</button></a>
+            <a href="project.html"><button class="cta-btn">View Projects</button></a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST SECTION ===== -->
+<section class="trust">
+    <div>15+ Years Experience</div>
+    <div>500+ Projects Completed</div>
+    <div>200+ Happy Clients</div>
+    <div>Licensed & Insured</div>
+</section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section class="about">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="About Image">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            We are a professional construction company specializing in general construction,
+            drywall installation, painting, decoration, carpentry, and wood wall design.
+            With over 15 years of experience, we deliver high-quality projects that exceed expectations.
+        </p>
+    </div>
+</section>
+
+<!-- ===== SERVICES SECTION ===== -->
+<section class="services">
+    <h2>What We Offer</h2>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <h3>General Construction</h3>
+            <p>Full-scale building solutions from foundation to finish.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Drywall Installation</h3>
+            <p>Professional drywall and partitioning services.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Painting & Decoration</h3>
+            <p>Modern interior and exterior finishing designs.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Carpentry</h3>
+            <p>Custom woodwork and furniture installations.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Wood Wall Design</h3>
+            <p>Elegant wooden wall structures and finishing.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>Renovation</h3>
+            <p>Upgrade and transform existing structures.</p>
+        </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <h2>Our Recent Projects</h2>
+        
+            <div class="project-grid">
+        
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+                    <h3>Luxury Residential Building</h3>
+                </div>
+        
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e">
+                    <h3>Modern Office Design</h3>
+                </div>
+        
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1590725140246-20acdee442be">
+                    <h3>Home Renovation</h3>
+                </div>
+        
+            </div>
+        </section>
+        <section class="why-us" id="why-us">
+            <h2>Why Choose Us</h2>
+        
+            <div class="why-grid">
+                <div class="why-item">15+ Years Experience</div>
+                <div class="why-item">Skilled Professionals</div>
+                <div class="why-item">High Quality Materials</div>
+                <div class="why-item">On-Time Delivery</div>
+                <div class="why-item">Affordable Pricing</div>
+                <div class="why-item">Trusted by Clients</div>
+            </div>
+        </section>
+    </div>
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Clients Say</h2>
+    
+        <div class="testimonial-box">
+            <p>"Amazing work! Very professional and delivered on time."</p>
+            <strong>- John D.</strong>
+        </div>
+    
+        <div class="testimonial-box">
+            <p>"High quality construction and excellent customer service."</p>
+            <strong>- Sarah K.</strong>
+        </div>
+    </section>
+    <section class="faq" id="faq">
+        <h2>Frequently Asked Questions</h2>
+    
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">How long does a project take?</div>
+            <div class="faq-answer">It depends on project size, usually 2–12 weeks.</div>
+        </div>
+    
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">Do you offer free estimates?</div>
+            <div class="faq-answer">Yes, we provide free consultation and estimates.</div>
+        </div>
+    
+    </section>
+    
+    <script>
+    function toggleFAQ(el) {
+        let answer = el.nextElementSibling;
+        answer.style.display = (answer.style.display === "block") ? "none" : "block";
+    }
+    </script>
+    <section class="cta-section" id="cta">
+        <h2>Ready to Build Your Dream Project?</h2>
+        <p>Let’s turn your ideas into reality with expert construction services.</p>
+        <button class="cta-btn">Get Free Consultation</button>
+    </section>
+    <section class="contact" id="contact">
+
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+    
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+    
+            <button>Send Message</button>
+        </div>
+    
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p><b>Location:</b> Abuja, Nigeria</p>
+            <p><b>Phone:</b> +234 XXX XXX XXXX</p>
+            <p><b>Email:</b> info@yourcompany.com</p>
+            <p><b>Hours:</b> Mon - Sat (8AM - 6PM)</p>
+        </div>
+    
+    </section>
+</section>
+<script>
+    /* =========================================
+   VASKU CONSTRUCTION - FULL WEBSITE JS
+   SECTIONS 1 TO 11
+   Live Interactive JavaScript Features
+========================================= */
+
+/* ===== MOBILE NAVIGATION TOGGLE ===== */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector("nav ul");
+
+if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+}
+
+/* ===== STICKY HEADER ON SCROLL ===== */
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+        header.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+        header.style.background = "#081c33";
+    } else {
+        header.style.boxShadow = "none";
+        header.style.background = "#0A2540";
+    }
+});
+
+/* ===== SMOOTH SCROLL NAVIGATION ===== */
+
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener("click", function(e) {
+        const targetId = this.getAttribute("href");
+
+        if (targetId.startsWith("#")) {
+            e.preventDefault();
+
+            const targetSection = document.querySelector(targetId);
+
+            if (targetSection) {
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: "smooth"
+                });
+            }
+        }
+    });
+});
+
+/* ===== HERO BUTTONS INTERACTION ===== */
+
+const heroButtons = document.querySelectorAll(".hero-buttons button");
+
+heroButtons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "scale(1.05)";
+        button.style.transition = "0.3s";
+    });
+
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "scale(1)";
+    });
+});
+
+/* ===== COUNTER ANIMATION (TRUST SECTION) ===== */
+
+const counters = document.querySelectorAll(".trust div");
+
+counters.forEach(counter => {
+    let target = parseInt(counter.innerText);
+    let count = 0;
+
+    if (!isNaN(target)) {
+        let speed = target / 100;
+
+        const updateCounter = () => {
+            if (count < target) {
+                count += speed;
+                counter.innerText = Math.ceil(count) + "+";
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+
+        updateCounter();
+    }
+});
+
+/* ===== SERVICE CARD HOVER EFFECT ===== */
+
+const serviceCards = document.querySelectorAll(".service-card");
+
+serviceCards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "translateY(-10px)";
+        card.style.transition = "0.3s";
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "translateY(0)";
+    });
+});
+
+/* ===== FAQ TOGGLE ===== */
+
+const faqQuestions = document.querySelectorAll(".faq-question");
+
+faqQuestions.forEach(question => {
+    question.addEventListener("click", () => {
+        const answer = question.nextElementSibling;
+
+        if (answer.style.display === "block") {
+            answer.style.display = "none";
+        } else {
+            document.querySelectorAll(".faq-answer").forEach(item => {
+                item.style.display = "none";
+            });
+
+            answer.style.display = "block";
+        }
+    });
+});
+
+/* ===== TESTIMONIAL AUTO SLIDER ===== */
+
+const testimonials = document.querySelectorAll(".testimonial-box");
+let testimonialIndex = 0;
+
+function showTestimonials() {
+    testimonials.forEach(item => {
+        item.style.display = "none";
+    });
+
+    testimonialIndex++;
+
+    if (testimonialIndex > testimonials.length) {
+        testimonialIndex = 1;
+    }
+
+    if (testimonials.length > 0) {
+        testimonials[testimonialIndex - 1].style.display = "block";
+    }
+
+    setTimeout(showTestimonials, 4000);
+}
+
+showTestimonials();
+
+/* ===== CONTACT FORM VALIDATION ===== */
+
+const contactForm = document.querySelector("form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const inputs = this.querySelectorAll("input, textarea");
+        let valid = true;
+
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                input.style.border = "1px solid red";
+                valid = false;
+            } else {
+                input.style.border = "1px solid #ccc";
+            }
+        });
+
+        if (valid) {
+            alert("Message sent successfully!");
+            contactForm.reset();
+        } else {
+            alert("Please fill all required fields.");
+        }
+    });
+}
+
+/* ===== CTA BUTTON SCROLL TO CONTACT ===== */
+
+const ctaButtons = document.querySelectorAll(".cta-btn");
+
+ctaButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const contactSection = document.querySelector("#contact");
+
+        if (contactSection) {
+            window.scrollTo({
+                top: contactSection.offsetTop - 80,
+                behavior: "smooth"
+            });
+        }
+    });
+});
+
+/* ===== SCROLL REVEAL EFFECT ===== */
+
+const revealElements = document.querySelectorAll(
+    ".about, .services, .projects, .why-us, .testimonials, .faq, .contact"
+);
+
+function revealOnScroll() {
+    revealElements.forEach(element => {
+        const windowHeight = window.innerHeight;
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+            element.style.transition = "all 0.8s ease";
+        } else {
+            element.style.opacity = "0";
+            element.style.transform = "translateY(50px)";
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+/* ===== PROJECT IMAGE LIGHT HOVER ===== */
+
+const projectCards = document.querySelectorAll(".project-card img");
+
+projectCards.forEach(img => {
+    img.addEventListener("mouseenter", () => {
+        img.style.transform = "scale(1.05)";
+        img.style.transition = "0.4s";
+    });
+
+    img.addEventListener("mouseleave", () => {
+        img.style.transform = "scale(1)";
+    });
+});
+
+/* ===== PAGE LOADER EFFECT ===== */
+
+window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
+    document.body.style.transition = "0.5s";
+});
+</script>
+</body>
+</html>
