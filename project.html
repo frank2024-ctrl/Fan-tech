@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects | Tech Company</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background: #065aad;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+.project-hero {
+    background: linear-gradient(to right, #0a2540, #032131);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+/* Projects Section */
+.projects-section {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: 38px;
+    margin-bottom: 50px;
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 20px 0 10px;
+}
+
+.project-card p {
+    padding: 0 20px 20px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.project-card button {
+    margin-bottom: 25px;
+    padding: 12px 25px;
+    border: none;
+    background: #0A2540;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-card button:hover {
+    background: #084298;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background: #0A2540;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav class="navbar">
+        <div class="logo">TechNova</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="project.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="project-hero">
+    <div class="hero-content">
+        <h1>Our Successful Projects</h1>
+        <p>
+            We create powerful digital solutions that help businesses grow, 
+            scale, and dominate their industry.
+        </p>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects-section">
+    <h2>Featured Projects</h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4" alt="Project 1">
+            <h3>E-Commerce Platform</h3>
+            <p>
+                A modern online shopping platform with payment integration, 
+                analytics, and inventory management.
+            </p>
+            <button onclick="showDetails('E-Commerce Platform')">
+                View Details
+            </button>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3" alt="Project 2">
+            <h3>Banking Mobile App</h3>
+            <p>
+                Secure mobile banking solution with biometric login, 
+                fund transfers, and financial reporting.
+            </p>
+            <button onclick="showDetails('Banking Mobile App')">
+                View Details
+            </button>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118" alt="Project 3">
+            <h3>Real Estate CRM</h3>
+            <p>
+                Smart CRM system for real estate agencies with lead tracking, 
+                automation, and reporting tools.
+            </p>
+            <button onclick="showDetails('Real Estate CRM')">
+                View Details
+            </button>
+        </div>
+
+        <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3" alt="Project 4">
+            <h3>AI Business Dashboard</h3>
+            <p>
+                Advanced dashboard using AI insights for business forecasting, 
+                analytics, and smart decision-making.
+            </p>
+            <button onclick="showDetails('AI Business Dashboard')">
+                View Details
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- Modal Popup -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <p>
+            This project was developed using cutting-edge technologies 
+            to ensure performance, security, and scalability for our clients.
+        </p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 TechNova. All Rights Reserved.</p>
+</footer>
+
+<script>
+function showDetails(projectName) {
+    document.getElementById("modalTitle").innerText = projectName;
+    document.getElementById("projectModal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("projectModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("projectModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
